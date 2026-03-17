@@ -1,3 +1,4 @@
+
 // ==================== PAPERS FROM BACKEND ====================
 // This is set in view.html: window.PAPERS_FROM_BACKEND = {{ papers | tojson }}
 const papers = typeof window.PAPERS_FROM_BACKEND !== 'undefined'
@@ -350,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Close mobile menu when clicking on a navigation link
-        const mobileNavLinks = mobileNav.querySelectorAll('a.mobile-nav-link');
+        const mobileNavLinks = mobileNav.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenuToggle.classList.remove('active');
