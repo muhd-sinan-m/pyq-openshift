@@ -1964,185 +1964,6 @@
 
 /* Tablets - Hide secondary items, show mobile toggle */
 @media (max-width: 920px) {
-    .unified-header {
-        gap: 1.5rem;
-    }
-
-    .college-logo {
-        height: 46px;
-    }
-
-    .portal-title {
-        font-size: 1.375rem;
-    }
-
-    .portal-subtitle {
-        font-size: 0.65rem;
-    }
-
-    /* Hide main navigation */
-    .main-nav {
-        display: none;
-    }
-
-    /* Hide icon buttons on mobile */
-    .header-user .icon-btn {
-        display: none;
-    }
-
-    /* Show mobile toggle */
-    .mobile-menu-toggle {
-        display: flex;
-    }
-}
-
-/* Mobile phones */
-@media (max-width: 640px) {
-    .unified-header {
-        padding: 1rem 0;
-        gap: 1rem;
-    }
-
-    .college-logo {
-        height: 40px;
-    }
-
-    .portal-logo svg {
-        width: 34px;
-        height: 34px;
-    }
-
-    .portal-title {
-        font-size: 1.25rem;
-    }
-
-    .portal-subtitle {
-        font-size: 0.6rem;
-    }
-
-    /* Hide username on small screens */
-    .user-name {
-        display: none;
-    }
-
-    .btn-login,
-    .btn-logout {
-        padding: 0.5rem 1.25rem;
-        font-size: 0.825rem;
-    }
-}
-
-/* Very small phones */
-@media (max-width: 480px) {
-    .unified-header {
-        gap: 0.75rem;
-    }
-
-    .college-logo {
-        height: 36px;
-    }
-
-    .portal-logo svg {
-        width: 30px;
-        height: 30px;
-    }
-
-    .portal-title {
-        font-size: 1.125rem;
-    }
-
-    .portal-subtitle {
-        font-size: 0.55rem;
-    }
-
-    .btn-login,
-    .btn-logout {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
-}
-/* Mobile Navigation - Enhanced */
-.mobile-nav {
-    display: none;
-    padding: 1rem 0;
-    background: rgba(0, 0, 0, 0.15);
-    margin-top: 1rem;
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-}
-
-.mobile-nav.active {
-    display: block;
-    max-height: 500px;
-    opacity: 1;
-    animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.mobile-nav nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 0 0.75rem;
-}
-
-.mobile-nav-link {
-    padding: 0.875rem 1rem;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 0.625rem;
-    transition: all 0.2s ease;
-    background: none;
-    border: none;
-    text-align: left;
-    width: 100%;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-.mobile-nav-link:hover,
-.mobile-nav-link:active {
-    background: rgba(255, 255, 255, 0.12);
-}
-
-.mobile-nav-divider {
-    border: none;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 0.5rem 0;
-}
-
-.mobile-nav-user {
-    padding: 0.75rem 1rem;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.875rem;
-    display: block;
-    font-weight: 500;
-}
-
-.mobile-nav-login,
-.mobile-nav-logout {
-    background: rgba(255, 255, 255, 0.18);
-    font-weight: 700;
-}
-/* Fix header overflow on mobile */
-@media (max-width: 920px) {
     .container-fluid {
         padding: 0 1rem;
     }
@@ -2214,7 +2035,13 @@
     }
 }
 
+/* Mobile phones */
 @media (max-width: 640px) {
+    .unified-header {
+        padding: 1rem 0;
+        gap: 0.5rem;
+    }
+
     .college-brand {
         max-width: 100px;
     }
@@ -2235,8 +2062,20 @@
     .portal-subtitle {
         font-size: 0.55rem;
     }
+
+    /* Hide username on small screens */
+    .user-name {
+        display: none;
+    }
+
+    .btn-login,
+    .btn-logout {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
 }
 
+/* Very small phones */
 @media (max-width: 480px) {
     .container-fluid {
         padding: 0 0.75rem;
@@ -2277,4 +2116,130 @@
         padding: 0.4rem 0.875rem;
         font-size: 0.7rem;
     }
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.mobile-nav.active {
+    display: block;
+    max-height: 600px;
+    opacity: 1;
+    padding: 1rem 0;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0 0.75rem;
+}
+
+.mobile-nav-link {
+    padding: 0.875rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 0.625rem;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.mobile-nav-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.5rem 0;
+}
+
+.mobile-nav-user {
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.875rem;
+    display: block;
+    font-weight: 500;
+}
+
+.mobile-nav-login,
+.mobile-nav-logout {
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 1001;
+    position: relative;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.mobile-menu-toggle span {
+    width: 24px;
+    height: 2.5px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
